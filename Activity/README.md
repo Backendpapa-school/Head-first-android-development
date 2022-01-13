@@ -6,7 +6,7 @@ In understanding how Activity works, we will be developing a Stopwatch applicati
 4. The reset button to set the watch back to 0
 
 ### Create new project
-Create a new project in Android studio and naming the application Stopwatch, set the minumum SDK to API 21. we are developing as usual with kotlin and created withan empty activity.
+Create a new project in Android studio and naming the application **Stopwatch**, set the minumum SDK to API 21. we are developing as usual with kotlin and created withan empty activity.
 
 ### String resource for the text label
 we added the string labels for the three button into the strings.xml
