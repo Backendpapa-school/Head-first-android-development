@@ -69,7 +69,7 @@ The layout will include three buttons and one view to display the timer. This vi
 we used a Linear Layout,set the orientation of the Layout to vertical. Our app design requires all app to be aligned in a centered and horizontal position. so we used the the **gravity** property and set it to center_horizontal.
 
 
-### Acitivy or control code
+### Activity or control code
 Here we determine how the views behave, both the buttons and the chronometer
 Here is a break down of it:
 1. The start button needs to start if it not already.
