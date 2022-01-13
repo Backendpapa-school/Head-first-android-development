@@ -89,6 +89,8 @@ Starts the chronometer
 **Stop method**
 Stops the chronometer
 
+Read more: [Chronometer](https://developer.android.com/reference/android/widget/Chronometer)
+
 
 
 Each buttons require an onclicklistener to listen to events.
@@ -96,3 +98,63 @@ There are 3 variables that will be set which are
 1. **stopwatch:** This holds a reference to the chronometer
 2. **running:** This is a boolean that keeps track of if the timer is running or not.
 3. **Offset:** Keep track of the accurate time when the timer is paused, its important in restarting the timer
+
+
+```
+package com.backendpapa.stopwatch
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.os.SystemClock
+import android.widget.Button
+import android.widget.Chronometer
+
+class MainActivity : AppCompatActivity() {
+
+//    1
+    lateinit var stopwatch:Chronometer;
+    var running=false;
+    var offset:Long=0;
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+//        2
+        stopwatch=findViewById(R.id.stopwatch)
+
+//        3
+        val startButton=findViewById<Button>(R.id.start)
+        startButton.setOnClickListener{
+            if( !running){
+                setBaseTime()
+                stopwatch.start()
+                running=true;
+            }
+//            5
+            val pauseButton=findViewById<Button>(R.id.pause)
+            pauseButton.setOnClickListener{
+                if(running){
+                    stopwatch.stop()
+                    saveOffset()
+                    running=false
+                }
+            }
+//            7
+            val resetButton=findViewById<Button>(R.id.reset)
+            resetButton.setOnClickListener{
+                offset=0;
+                setBaseTime()
+
+            }
+        }
+    }
+// 4
+    fun setBaseTime(){
+        stopwatch.base=SystemClock.elapsedRealtime()-offset;
+    }
+//    6
+    fun saveOffset(){
+        offset=SystemClock.elapsedRealtime()-stopwatch.base
+    }
+}
+```
