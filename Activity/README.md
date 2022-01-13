@@ -67,3 +67,32 @@ The layout will include three buttons and one view to display the timer. This vi
 
 ```
 we used a Linear Layout,set the orientation of the Layout to vertical. Our app design requires all app to be aligned in a centered and horizontal position. so we used the the **gravity** property and set it to center_horizontal.
+
+
+### Acitivy or control code
+Here we determine how the views behave, both the buttons and the chronometer
+Here is a break down of it:
+1. The start button needs to start if it not already.
+2. The pause button should pause the timing
+3. While the reset should return the time to 0
+
+**Chromometer base property**
+it is used to set the start time of the timer. it is set to 
+``` 
+SystemClock.elapsedRealtime()
+```
+it sets the base to zero.
+
+**Start method**
+Starts the chronometer
+
+**Stop method**
+Stops the chronometer
+
+
+
+Each buttons require an onclicklistener to listen to events.
+There are 3 variables that will be set which are
+1. **stopwatch:** This holds a reference to the chronometer
+2. **running:** This is a boolean that keeps track of if the timer is running or not.
+3. **Offset:** Keep track of the accurate time when the timer is paused, its important in restarting the timer
