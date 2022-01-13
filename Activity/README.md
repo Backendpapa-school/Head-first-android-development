@@ -159,4 +159,4 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-![alt text](https://github.com/backendpapa/Head-first-android-development/blob/main/Activity/result1.png?raw=true)
+![alt text](https://github.com/Backendpapa-school/Head-first-android-development/blob/main/Activity/result1.png?raw=true)
