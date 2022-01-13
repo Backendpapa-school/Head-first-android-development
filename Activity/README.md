@@ -160,3 +160,11 @@ class MainActivity : AppCompatActivity() {
 ```
 
 ![alt text](https://github.com/Backendpapa-school/Head-first-android-development/blob/main/Activity/result1.png?raw=true)
+
+> Application resets when screen orientation changes.
+
+What happens when you run the app and rotate it.
+
+1. click on start, the timer starts running
+2. When you rotate the orientation of the phone, Android destroy the main activity, all values are lost
+3. App is restarted, onCreate() runs again.
